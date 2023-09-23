@@ -1,2 +1,2 @@
 # aica-project-workshop
-Source code and materials for the course project AI in Culture and Art (AICA)
+Source code and teaching materials for the project workshop on AI in Culture and Art (AICA)
