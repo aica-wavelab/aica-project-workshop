@@ -1,13 +1,14 @@
 import '@marcellejs/core/dist/marcelle.css';
-import { dashboard } from '@marcellejs/core';
 import {setup as setupData} from './data.js';
+import {setup as setupTraining} from './training.js';
+import {setup as setupTesting} from './testing.js';
+import { dash } from './common';
 
-const dash = dashboard({
-	title: 'Train your image classifier',
-	author: 'Téo Sanchez',
-});
 
 setupData(dash);
+setupTraining(dash);
+setupTesting(dash);
+
 
 
 dash.show();

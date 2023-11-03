@@ -2,6 +2,7 @@ import '@marcellejs/core/dist/marcelle.css';
 import { dataStore, dataset, datasetBrowser, mobileNet, imageDisplay,
 		button
 		} from '@marcellejs/core';
+import { store } from './common';
 
 import { fetchFromGithub, importDataset, base64ToImageData} from '/src/components/imageLoad.js';
 
@@ -13,15 +14,13 @@ const repoName = 'teo-sanchez.github.io';
 
 // DATA COLLECTION AND FEATURES EXTRACTION
 
-
-const store = dataStore('localStorage');
-const trainingSet = dataset('trainingSet', store);
+export const trainingSet = dataset('trainingSet', store);
 const trainingSetBrowser = datasetBrowser(trainingSet);
 trainingSetBrowser.title = "Training set";
 
 const featureExtractor = mobileNet();
 
-const testSet = dataset('testSet', store);
+export const testSet = dataset('testSet', store);
 const testSetBrowser = datasetBrowser(testSet);
 testSetBrowser.title = "Test set";
 

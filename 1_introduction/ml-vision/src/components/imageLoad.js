@@ -80,7 +80,7 @@ export async function importDataset(
   
         const label = extractLabelFromUrl(url, labelMapping);
         const trainingData = {
-          x: featureExtractor.process(imageData), // Process the image data for features
+          x: await featureExtractor.process(imageData), // Process the image data for features
           thumbnail: imageData,
         //   large_images: imageData, // Use ImageData directly for large image
           y: label, // get the label value
