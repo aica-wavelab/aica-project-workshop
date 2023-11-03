@@ -11,8 +11,6 @@ export const classifierMLP = mlpClassifier({ layers: [64, 64], epochs: 15, batch
     'mlp',
 );
 
-classifierMLP.$training.subscribe(e => console.log(e));
-
 const paramsMLP = modelParameters(classifierMLP);
 paramsMLP.title = 'Neural network parameters';
 
@@ -22,6 +20,7 @@ classifierMLP.train(trainingSet);
   
 const progBar = trainingProgress(classifierMLP);
 progBar.title = "Training progress";
+
 const learningCurve = trainingPlot(classifierMLP);
 learningCurve.title = "Learning curve";
 
