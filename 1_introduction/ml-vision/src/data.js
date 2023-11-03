@@ -15,13 +15,13 @@ const repoName = 'teo-sanchez.github.io';
 // DATA COLLECTION AND FEATURES EXTRACTION
 
 export const trainingSet = dataset('trainingSet', store);
-const trainingSetBrowser = datasetBrowser(trainingSet);
+export const trainingSetBrowser = datasetBrowser(trainingSet);
 trainingSetBrowser.title = "Training set";
 
-const featureExtractor = mobileNet();
+export const featureExtractor = mobileNet();
 
 export const testSet = dataset('testSet', store);
-const testSetBrowser = datasetBrowser(testSet);
+export const testSetBrowser = datasetBrowser(testSet);
 testSetBrowser.title = "Test set";
 
 
@@ -217,7 +217,7 @@ b_miniSkin.$click.subscribe(() => {
 	  .catch(console.error)
   });
 
-const $selectionStream = 
+export const $selectionStream = 
     trainingSetBrowser.$selected
         .map(array => ({ source: 'training', id: array.length > 0 ? array[array.length - 1] : undefined }))
         .map(({ _, id }) => id)
@@ -233,7 +233,7 @@ const $selectionStream =
     .map((e) => base64ToImageData(e))
     .awaitPromises();
 
-const imageViewer = imageDisplay($selectionStream);
+export const imageViewer = imageDisplay($selectionStream);
 imageViewer.title = "Image selected";
 
 export function setup(dash){
