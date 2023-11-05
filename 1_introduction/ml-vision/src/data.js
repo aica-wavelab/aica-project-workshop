@@ -62,30 +62,30 @@ b_miniMask.$click.subscribe(() => {
 
 // Fruits
 
-const b_miniFruit = button("miniFRUIT");
-b_miniFruit.title = "Fruit classification";
+// const b_miniFruit = button("miniFRUIT");
+// b_miniFruit.title = "Fruit classification";
 
-b_miniFruit.$click.subscribe(() => {
-	trainingSet.clear();
-	let pathToImages = '/assets/demos_data/miniFRUIT/train';
-	importDataset(
-		trainingSet,
-		featureExtractor,
-		fetchFromGithub,
-		[repoOwner, repoName, pathToImages]
-	  )
-	  .catch(console.error)
+// b_miniFruit.$click.subscribe(() => {
+// 	trainingSet.clear();
+// 	let pathToImages = '/assets/demos_data/miniFRUIT/train';
+// 	importDataset(
+// 		trainingSet,
+// 		featureExtractor,
+// 		fetchFromGithub,
+// 		[repoOwner, repoName, pathToImages]
+// 	  )
+// 	  .catch(console.error)
 
-	testSet.clear();
-	pathToImages = '/assets/demos_data/miniFRUIT/test';
-	importDataset(
-		testSet,
-		featureExtractor,
-		fetchFromGithub,
-		[repoOwner, repoName, pathToImages]
-	  )
-	  .catch(console.error)
-  });
+// 	testSet.clear();
+// 	pathToImages = '/assets/demos_data/miniFRUIT/test';
+// 	importDataset(
+// 		testSet,
+// 		featureExtractor,
+// 		fetchFromGithub,
+// 		[repoOwner, repoName, pathToImages]
+// 	  )
+// 	  .catch(console.error)
+//   });
 
 // Traffic lights
 
@@ -239,5 +239,5 @@ imageViewer.title = "Image selected";
 export function setup(dash){
     dash.page("Data collection")
         .sidebar(imageViewer)
-        .use([b_miniFruit, b_miniMask, b_miniRoad, b_miniTrash, b_miniRetina, b_miniSkin], [trainingSetBrowser, testSetBrowser]);
+        .use([b_miniMask, b_miniRoad, b_miniTrash, b_miniRetina, b_miniSkin], [trainingSetBrowser, testSetBrowser]);
 }

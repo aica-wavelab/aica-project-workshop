@@ -1,6 +1,7 @@
 import '@marcellejs/core/dist/marcelle.css';
 import { dashboard, dataStore } from '@marcellejs/core';
 
+
 export const store = dataStore('localStorage');
 
 export const dash = dashboard({
@@ -8,4 +9,3 @@ export const dash = dashboard({
   author: 'Téo Sanchez',
 });
 
-dash.settings.dataStores(store);
