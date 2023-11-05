@@ -6,7 +6,7 @@ import { trainingSet } from './data';
 const b_train = button("Train");``
 b_train.title = "Train the neural network";
 
-export const classifierMLP = mlpClassifier({ layers: [64, 64], epochs: 15, batch: 8 }).sync(
+export const classifierMLP = mlpClassifier({ layers: [64, 32], epochs: 15, batch: 8 }).sync(
     store,
     'mlp',
 );
