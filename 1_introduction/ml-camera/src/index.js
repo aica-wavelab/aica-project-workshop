@@ -49,7 +49,7 @@ const b_train = button("Train");
 b_train.title = "Train the model";
 
 
-const classifier = mlpClassifier({ layers: [64, 32], epochs: 20 }).sync(store, 'mlp-dashboard');
+const classifier = mlpClassifier({ layers: [64, 32], epochs: 15, batch: 8 }).sync(store, 'mlp-dashboard');
 b_train.$click.subscribe(() => classifier.train(trainingSet));
 
 const progBar = trainingProgress(classifier);
