@@ -33,16 +33,7 @@ const trainingSet = dataset('training set', store);
 const trainingSetBrowser = datasetBrowser(trainingSet);
 trainingSetBrowser.title = "Training set";
 
-imageSource.$images
-  .filter(() => b_collect.$pressed.get())
-  .map(async (img) => ({
-    x: await featureExtractor.process(img),
-    thumbnail: imageSource.$thumbnails.get(),
-    y: label.$value.get(),
-  }))
-  .awaitPromises()
-  .subscribe(trainingSet.create);
-
+   
 // TRAINING
 
 const b_train = button("Train");
