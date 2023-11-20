@@ -18,7 +18,7 @@
 #X obj 19 239 list append;
 #X obj 19 159 t b l;
 #X listbox 19 199 8 0 0 0 - - - 12;
-#X obj 259 579 switch 3 0;
+#X obj 259 519 switch 3 0;
 #X obj 259 39 hradio 21 1 0 3 empty empty empty 0 -11 0 12 #fcfcfc #000000 #000000 0;
 #X obj 79 299 prepend add;
 #X obj 279 459 prepend map;
